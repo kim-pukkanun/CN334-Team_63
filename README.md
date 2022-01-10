@@ -3,4 +3,5 @@
 - [x] create and upload tasklist with Laravel 
 - [x] me commit :D
 - [x] my friend commit 
-- [x] have dev environment
+- [x] everyone have dev environment
+
