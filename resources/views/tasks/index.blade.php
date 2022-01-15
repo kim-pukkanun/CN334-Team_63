@@ -44,27 +44,27 @@
             <div
                     class="progress-bar bg-info"
                     role="progressbar"
-                    style="width: {{ count($current_tasks) / $total * 100 }}%;"
-                    aria-valuenow="{{ count($current_tasks) / $total * 100 }}"
+                    style="width: {{ round(count($current_tasks) / $total * 100, 2) }}%;"
+                    aria-valuenow="{{ round(count($current_tasks) / $total * 100, 2) }}"
                     aria-valuemin="0"
                     aria-valuemax="100"
-            ></div>
+            >{{ round(count($current_tasks) / $total * 100, 2) }}%</div>
             <div
                     class="progress-bar bg-danger"
                     role="progressbar"
-                    style="width: {{ count($expired_tasks) / $total * 100 }}%;"
-                    aria-valuenow="{{ count($expired_tasks) / $total * 100 }}"
+                    style="width: {{ round(count($expired_tasks) / $total * 100, 2) }}%;"
+                    aria-valuenow="{{ round(count($expired_tasks) / $total * 100, 2) }}"
                     aria-valuemin="0"
                     aria-valuemax="100"
-            ></div>
+            >{{ round(count($expired_tasks) / $total * 100, 2) }}%</div>
             <div
                     class="progress-bar bg-success"
                     role="progressbar"
-                    style="width: {{ count($finished_tasks) / $total * 100 }}%;"
-                    aria-valuenow="{{ count($finished_tasks) / $total * 100 }}"
+                    style="width: {{ round(count($finished_tasks) / $total * 100, 2) }}%;"
+                    aria-valuenow="{{ round(count($finished_tasks) / $total * 100, 2) }}"
                     aria-valuemin="0"
                     aria-valuemax="100"
-            ></div>
+            >{{ round(count($finished_tasks) / $total * 100, 2) }}%</div>
         </div>
 
         <!-- Current Tasks -->
