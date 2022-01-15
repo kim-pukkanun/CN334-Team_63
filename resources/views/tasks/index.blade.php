@@ -4,8 +4,8 @@
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    New Task
+                <div class="text-left mb-3 badge bg-light text-dark border border-dark" style="margin-top:25px">
+                    <h1>New Task</h1>
                 </div>
 
                 <div class="panel-body">
@@ -18,17 +18,17 @@
 
                         <!-- Task Name -->
                         <div class="form-group">
-                            <label for="task-name" class="col-sm-3 control-label">Task</label>
+                            <label for="task-name" class="col-sm-3 control-label badge bg-info text-black"><h5>Task</h5></label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
+                                <input type="text" name="name" id="task-name" class="form-control p" value="{{ old('task') }}">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="deadline" class="col-sm-3 control-label">Deadline</label>
+                            <label for="deadline" class="col-sm-3 control-label badge bg-info text-black"><h5>Deadline</h5></label>
 
                             <div class="col-sm-6">
-                                <input type="text" name="deadline" id="deadline" class="form-control">
+                                <input type="text" name="deadline" id="deadline" class="form-control p5">
                             </div>
                         </div>
 
@@ -46,15 +46,15 @@
 
             <!-- Current Tasks -->
             @if (count($tasks) > 0)
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Current Tasks
+                <div class="panel-heading">
+                    <div class="text-left mb-3 badge bg-light text-dark border border-dark" style="margin-top:25px">
+                        <h2>Current Task</h2>
                     </div>
 
                     <div class="panel-body">
                         <table class="table table-striped task-table">
                             <thead>
-                                <th>Task</th>
+                                <th class="rounded">Task</th>
                                 <th>&nbsp;</th>
                             </thead>
                             <tbody>

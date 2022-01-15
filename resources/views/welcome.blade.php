@@ -6,11 +6,11 @@
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">
-                    Welcome
+                    Tasker
                 </div>
                 <div class="card-body">
                     <p class="card-text">
-                        Your Application's Landing Page.
+                        Welcome to Tasker.
                     </p>
                 </div>
             </div>
