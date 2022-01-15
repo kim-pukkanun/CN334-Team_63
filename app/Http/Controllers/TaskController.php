@@ -40,8 +40,16 @@ class TaskController extends Controller
      */
     public function index(Request $request)
     {
+        $current_tasks = $this->tasks->currentTasks($request->user());
+        $expired_tasks = $this->tasks->expiredTasks($request->user());
+        $finished_tasks = $this->tasks->finishedTasks($request->user());
+        $total = count($current_tasks) + count($expired_tasks) + count($finished_tasks) != 0 ? count($current_tasks) + count($expired_tasks) + count($finished_tasks) : 1;
+
         return view('tasks.index', [
-            'tasks' => $this->tasks->forUser($request->user()),
+            'current_tasks' => $current_tasks,
+            'expired_tasks' => $expired_tasks,
+            'finished_tasks' => $finished_tasks,
+            'total' => $total
         ]);
     }
 
@@ -67,6 +75,22 @@ class TaskController extends Controller
     }
 
     /**
+     * Finish the given task.
+     *
+     * @param  Request  $request
+     * @param  Task  $task
+     * @return Response
+     */
+    public function finish(Request $request, Task $task)
+    {
+        $this->authorize('access', $task);
+
+        $task->update(['finished' => 1]);
+
+        return redirect('/tasks');
+    }
+
+    /**
      * Destroy the given task.
      *
      * @param  Request  $request
@@ -75,7 +99,7 @@ class TaskController extends Controller
      */
     public function destroy(Request $request, Task $task)
     {
-        $this->authorize('destroy', $task);
+        $this->authorize('access', $task);
 
         $task->delete();
 
