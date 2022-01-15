@@ -82,6 +82,45 @@
                     </div>
                 </div>
             @endif
+
+            <!-- Expired Tasks -->
+            @if (count($tasks) > 0)
+                <div class="panel panel-default">
+                    <div class="panel-heading border-start border-danger" style="margin-top:20px">
+                        <h2>Expired Tasks</h2>
+                    </div>
+
+                    <div class="panel-body">
+                        <table class="table table-striped task-table">
+                            <thead>
+                            <th>Task</th>
+                            <th>Deadline</th>
+                            <th>&nbsp;</th>
+                            </thead>
+                            <tbody>
+                            @foreach ($tasks as $task)
+                                <tr>
+                                    <td class="table-text"><div>{{ $task->name }}</div></td>
+                                    <td class="table-text"><div>{{ date("Y-m-d H:i:s", $task->deadline_at) }}</div></td>
+
+                                    <!-- Task Delete Button -->
+                                    <td>
+                                        <form action="{{url('task/' . $task->id)}}" method="POST">
+                                            {{ csrf_field() }}
+                                            {{ method_field('DELETE') }}
+
+                                            <button type="submit" id="delete-task-{{ $task->id }}" class="btn btn-danger">
+                                                <i class="fa fa-btn fa-trash"></i>Delete
+                                            </button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            @endforeach
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            @endif
         </div>
     </div>
     <script type="text/javascript">
