@@ -4,8 +4,8 @@
     <div class="container">
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
-                <div class="panel-heading">
-                    New Task
+                <div class="panel-heading border-start border-info" style="margin-top:20px">
+                    <h1>New Task</h1>
                 </div>
 
                 <div class="panel-body">
@@ -33,7 +33,7 @@
                         </div>
 
                         <!-- Add Task Button -->
-                        <div class="form-group">
+                        <div class="form-group" style="margin-top:20px">
                             <div class="col-sm-offset-3 col-sm-6">
                                 <button type="submit" class="btn btn-default">
                                     <i class="fa fa-btn fa-plus"></i>Add Task
@@ -47,8 +47,8 @@
             <!-- Current Tasks -->
             @if (count($tasks) > 0)
                 <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Current Tasks
+                    <div class="panel-heading border-start border-info" style="margin-top:20px">
+                        <h2>Current Tasks</h2>
                     </div>
 
                     <div class="panel-body">
