@@ -15,7 +15,11 @@
     <!-- Styles -->
     <link href="{{ asset('assets/css/mdb.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet">
-    {{-- <link href="{{ elixir('css/app.css') }}" rel="stylesheet"> --}}
+
+    @if(Route::getCurrentRoute()->getPath() === 'tasks')
+    <link href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.css" rel="stylesheet">
+    @endif
 
     <style>
         body {
@@ -64,6 +68,11 @@
 
     <!-- JavaScripts -->
     <script src="{{ asset('assets/js/mdb.min.js') }}"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    @if(Route::getCurrentRoute()->getPath() === 'tasks')
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-ui-timepicker-addon/1.6.3/jquery-ui-timepicker-addon.min.js"></script>
+    @endif
 </body>
 </html>
