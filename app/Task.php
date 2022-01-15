@@ -12,7 +12,7 @@ class Task extends Model
      *
      * @var array
      */
-    protected $fillable = ['name', 'deadline_at'];
+    protected $fillable = ['name', 'deadline_at', 'finished'];
     
     /**
      * The attributes that should be cast to native types.
@@ -21,6 +21,7 @@ class Task extends Model
      */
     protected $casts = [
         'user_id' => 'int',
+        'finished' => 'int',
         'deadline_at' => 'timestamp'
     ];
 
