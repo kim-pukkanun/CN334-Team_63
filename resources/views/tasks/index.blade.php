@@ -5,7 +5,7 @@
         <div class="col-sm-offset-2 col-sm-8">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    New Task
+                    New task
                 </div>
 
                 <div class="panel-body">
@@ -35,6 +35,10 @@
                         </div>
                     </form>
                 </div>
+                <!-- Stress Button -->
+                <button type="button" class="btn btn-primary">
+                    Stress Free Button
+                </button>
             </div>
 
             <!-- Current Tasks -->
