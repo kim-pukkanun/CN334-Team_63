@@ -24,6 +24,13 @@
                                 <input type="text" name="name" id="task-name" class="form-control" value="{{ old('task') }}">
                             </div>
                         </div>
+                        <div class="form-group">
+                            <label for="deadline" class="col-sm-3 control-label">Deadline</label>
+
+                            <div class="col-sm-6">
+                                <input type="text" name="deadline" id="deadline" class="form-control">
+                            </div>
+                        </div>
 
                         <!-- Add Task Button -->
                         <div class="form-group">
@@ -75,4 +82,13 @@
             @endif
         </div>
     </div>
+    <script type="text/javascript">
+        var dateToday = new Date();
+        $('#deadline').datetimepicker({
+            minDate: dateToday,
+            dateFormat: 'yy-mm-dd',
+            timeFormat: 'HH:mm:ss',
+            stepSecond: 60
+        });
+    </script>
 @endsection
