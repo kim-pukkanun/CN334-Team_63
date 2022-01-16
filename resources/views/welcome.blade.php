@@ -4,7 +4,7 @@
 <div class="container">
     <div class="bg-image ripple rounded-9 mt-2" data-mdb-ripple-color="light">
         <img src="https://images.pexels.com/photos/461077/pexels-photo-461077.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" class="w-100"/>
-        <a href="#!">
+        <a>
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.4)">
                 <div class="d-flex justify-content-center align-items-center h-50">
                     <div class="row justify-content-center">
